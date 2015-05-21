@@ -16,6 +16,7 @@ if(isset($_POST['submitNewUser']))
 	
 	
 	/* variables*/
+if(isset($_POST['gender'])){ $unsafe_gender = htmlentities($_POST['gender']);$unsafe_gender.= '';} else {$unsafe_gender = '';}
 
 $unsafe_userName 	= trim(htmlentities($_POST['userName']));
 $unsafe_firstName 	= trim(htmlentities($_POST['firstName']));
@@ -25,7 +26,6 @@ $unsafe_pc4       	= trim(htmlentities($_POST['pc4']));
 $unsafe_pc3 		= trim(htmlentities($_POST['pc3']));
 $unsafe_district 	= trim(htmlentities($_POST['district']));
 $unsafe_birthdate 	= trim(htmlentities($_POST['birthdate']));
-$unsafe_gender 		= trim(htmlentities($_POST['gender']));
 
 $safe_userName 		= mysqli_real_escape_string($dbconnection, $unsafe_userName);
 $safe_firstName 	= mysqli_real_escape_string($dbconnection, $unsafe_firstName);
@@ -36,6 +36,9 @@ $safe_pc3 			= mysqli_real_escape_string($dbconnection, $unsafe_pc3);
 $safe_district 		= mysqli_real_escape_string($dbconnection, $unsafe_district);
 $safe_birthdate 	= mysqli_real_escape_string($dbconnection, $unsafe_birthdate);
 $safe_gender 		= mysqli_real_escape_string($dbconnection, $unsafe_gender);
+
+
+
 	
 		/*username check, again...*/
 		if(!empty($safe_userName))
