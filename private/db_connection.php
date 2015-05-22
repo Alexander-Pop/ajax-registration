@@ -13,6 +13,6 @@ $database = 'usersregistration';
 $dbconnection = mysqli_connect($hostname,$username,$password, $database);
 	
 //check if connection is okay 
-if(!$dbconnection){
+if(mysqli_connect_errno()){
 	die('Error, database connection was not possible.');
 }

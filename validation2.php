@@ -179,3 +179,10 @@ $safe_gender 		= mysqli_real_escape_string($dbconnection, $unsafe_gender);
 		}
 		
 }
+
+
+//close connection
+mysqli_close($dbconnection);
+
+
+?>
