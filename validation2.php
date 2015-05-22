@@ -62,6 +62,8 @@ $safe_gender 		= mysqli_real_escape_string($dbconnection, $unsafe_gender);
 				}  
 			}
 		}
+		//free result , best practise
+		mysqli_free_result($checkuser);
 		
 		if(!empty($safe_userName) && preg_match('/^[A-Za-z0-9\-\_]{2,26}$/',$safe_userName))
 		{

@@ -53,7 +53,10 @@ if(isset($_POST['username']))
 			echo '<img src="https://cdn4.iconfinder.com/data/icons/Free-Medical-Icons-Set/32x32/Select.png" width="20px" height="20px;">';
 		}
 	}
+	//free the result, best practise
+mysqli_free_result($checkuser);
 }
+
 
 /*firstname validation*/
 if(isset($_POST['firstname']))
