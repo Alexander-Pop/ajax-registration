@@ -288,5 +288,7 @@ if(isset($_POST['gender']))
 	}
 }
 
+//close datanase connection
+mysqli_close($dbconnection);
 
-
+?>
